@@ -2,3 +2,4 @@ letters/*
 .DS_Store
 letters.zip
 in/*.docx
+in/*.xlsx

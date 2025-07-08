@@ -1,17 +1,6 @@
 # Mabel Letter Generator
 
-This tool automates the generation of client letters by merging data exported from LawLogix with a Word template. For each row in the Excel file it produces a personalized letter in DOCX format, replacing placeholder tags (`<caps_full_name>`, `<full_name>`, `<rm>`, `<date>`) in the template.
-
-## Directory Structure
-
-mabel-letter-generator/
-├── fill_letters.py
-├── in/
-│   ├── Letter_Template.docx
-│   └── Letter_Excel.xlsx
-├── out/
-├── .gitignore
-└── README.md
+This tool automates the generation of client letters by merging data exported from LawLogix with a Word template. For each row in the Excel file it produces a personalized letter in DOCX format, replacing placeholder tags in the template.
 
 ## Usage
 

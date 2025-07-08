@@ -1,6 +1,6 @@
 # Mabel Letter Generator
 
-This tool automates the generation of client letters by merging data exported from LawLogix with a Word template. For each row in the Excel file it produces a personalized letter in DOCX format, replacing placeholder tags in the template.
+This tool automates the generation of Proof of Residence letters by merging data exported from LawLogix with a Word template. For each row in the Excel file it produces a personalized letter in DOCX format, replacing placeholder tags in the template.
 
 ## Usage
 

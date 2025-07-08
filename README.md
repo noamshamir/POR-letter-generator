@@ -5,11 +5,13 @@ This tool automates the generation of client letters by merging data exported fr
 ## Usage
 
 1. **Prepare your inputs**  
-   - Copy your blank Word template into `in/Letter_Template.docx`. Ensure it contains the placeholder tags:  
+   - Create a word document here: `in/Letter_Template.docx`
+   - Add your specific template template. Ensure it contains the placeholder tags:  
      - `<caps_full_name>`  
      - `<full_name>`  
      - `<rm>`  
-     - `<date>`  
+     - `<date>`
+       
 2. **Export your client data from LawLogix to Excel**
      - name it `in/Letter_Excel.xlsx`
      - verify it has the columns exactly as shown above.

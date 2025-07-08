@@ -3,18 +3,15 @@ from docx import Document
 import datetime
 from copy import deepcopy
 
-# files
-doc_template_path = '/Users/noamshamir/Documents/Mabel/Letters Generator/in/Letter_Template.docx'
-excel_data_path = '/Users/noamshamir/Documents/Mabel/Letters Generator/in/Letter_Excel.xlsx'
-output_file_path = '/Users/noamshamir/Documents/Mabel/Letters Generator/out/'
+# The following file paths are relative to the repo root
+doc_template_path = 'in/Letter_Template.docx'
+excel_data_path = 'in/Letter_Excel.xlsx'
+output_dir = 'out'
 
-# get data from excel
 data = pd.read_excel(excel_data_path)
 data_dicts = data.to_dict(orient='records')
 
-# iterate over excel rows
 for index, row in enumerate(data_dicts):
-    # init variables from the row in the Excel
     last_name = row['LAST NAME']
     first_name = row['CLIENT NAME']
     room = str(row['RM'])
@@ -26,7 +23,6 @@ for index, row in enumerate(data_dicts):
         if date_day_of_month.startswith('0'):
             date_day_of_month = date_day_of_month[1:]
         date = date.strftime(f'%b {date_day_of_month}, %Y')
-    # validate data 
     except Exception as e:
         print(f"Row {index+1}: Cannot parse date for {first_name} {last_name} ({row['DATE']}). Skipping")
         continue
@@ -49,10 +45,8 @@ for index, row in enumerate(data_dicts):
         print(f"Row {index+1}: Missing or invalid Room Number for {last_name}. Skipping")
         continue
 
-    # make a deep copy of the template document
     new_doc = deepcopy(Document(doc_template_path))
     
-    # Replace text in paragraphs
     for paragraph in new_doc.paragraphs:
         for run in paragraph.runs:
             if '<caps_full_name>' in run.text:
@@ -64,7 +58,6 @@ for index, row in enumerate(data_dicts):
             if '<date>' in run.text:
                 run.text = run.text.replace('<date>', date)
 
-    # replace text in tables (if any)
     for table in new_doc.tables:
         for row in table.rows:
             for cell in row.cells:
@@ -79,6 +72,5 @@ for index, row in enumerate(data_dicts):
                         if '<date>' in run.text:
                             run.text = run.text.replace('<date>', date)
 
-    # save th3 doc
     output_filename = f'{output_file_path}{full_name}.docx'
     new_doc.save(output_filename)

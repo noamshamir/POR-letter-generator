@@ -5,18 +5,13 @@ This tool automates the generation of client letters by merging data exported fr
 ## Directory Structure
 
 mabel-letter-generator/
-├── fill_letters.py         # Main Python script
-├── in/                     # Input files (not tracked in Git)
-│   ├── Letter_Template.docx  # Word template with placeholders
-│   └── Letter_Excel.xlsx     # Excel file exported from LawLogix, with columns:
-│                             #   - LAST NAME
-│                             #   - CLIENT NAME
-│                             #   - RM
-│                             #   - DATE
-├── out/                    # Generated letters (will be created automatically)
+├── fill_letters.py
+├── in/
+│   ├── Letter_Template.docx
+│   └── Letter_Excel.xlsx
+├── out/
 ├── .gitignore
 └── README.md
-
 ## Usage
 
 1. **Prepare your inputs**  

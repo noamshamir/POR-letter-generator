@@ -12,6 +12,7 @@ mabel-letter-generator/
 ├── out/
 ├── .gitignore
 └── README.md
+
 ## Usage
 
 1. **Prepare your inputs**  

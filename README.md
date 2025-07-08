@@ -14,8 +14,10 @@ This tool automates the generation of client letters by merging data exported fr
      - name it `in/Letter_Excel.xlsx`
      - verify it has the columns exactly as shown above.
 
-4. **Install dependencies**  
+4. **Install dependencies**
+   - In the python script, the file names are relative to the repo. Make sure these are correct for you.
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
    pip install pandas python-docx
+   
